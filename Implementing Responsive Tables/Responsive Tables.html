@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Implementing Responsive Tables</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: "Century Gothic";
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+        .table-container {
+            overflow-x: auto;
+            margin: 20px;
+        }
+
+        .responsive-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .responsive-table th,
+        .responsive-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .responsive-table th {
+            cursor: pointer;
+        }
+
+        .responsive-table th:hover {
+            background-color: #ddd;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .table-container {
+                overflow-x: scroll;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="table-container">
+    <table class="responsive-table" id="myTable">
+        <thead>
+           <tr>
+               <th onclick="sortTable(0)">Name</th>
+               <th onclick="sortTable(1)">Age</th>
+               <th onclick="sortTable(2)">City</th>
+               <th onclick="sortTable(3)">Country</th>
+               <th onclick="sortTable(4)">Email</th>
+           </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Kazuya Mishima</td>
+            <td>50</td>
+            <td>Tokyo</td>
+            <td>Japan</td>
+            <td>KazMishima@example.com</td>
+        </tr>
+        <!-- Add more rows as needed -->
+        <tr>
+            <td>Jin Mishima</td>
+            <td>22</td>
+            <td>Tokyo</td>
+            <td>Japan</td>
+            <td>JinMishima@example.com</td>
+        </tr>
+
+        <tr>
+            <td>Raven</td>
+            <td>unknown</td>
+            <td>unknown</td>
+            <td>unknown</td>
+            <td>raven@example.com</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
